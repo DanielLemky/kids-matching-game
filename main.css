@@ -1,0 +1,38 @@
+body {
+    background-color: #2e7eff;
+    max-width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+}
+
+#game {
+    border: 3px solid #fff;
+    margin: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    background-color: #e8e8e8;
+}
+
+.card {
+    height: 200px;
+    width: 200px;
+    margin: 15px;
+}
+
+.card.down {
+    background-color: #b5e4fb;
+    border: 15px solid rgb(38, 140, 51);
+}
+
+.card.up {
+    background-color: #fff;
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 15px solid #fff;
+    border-radius: 3px;
+}
