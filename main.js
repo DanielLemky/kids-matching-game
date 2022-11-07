@@ -1,5 +1,11 @@
-// for (let i = 0; i < 8; i++) {
-    
-// }
-
-Document.getElementById('game').innerHTML = '<div class="card"></div>';
+let pawPatrolCards = [
+	'chase',
+	'marshall',
+	'skye',
+	'rubble',
+	'everest',
+	'zuma',
+	'rocky',
+	'chickaletta',
+	'liberty'
+]
