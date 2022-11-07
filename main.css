@@ -80,6 +80,7 @@ h1 {
     max-width: 800px;
     margin: 0 auto;
     font-size: 1.2rem;
+    height: 50px;
 }
 
 .action-container {
@@ -99,4 +100,11 @@ h1 {
 #action.clear {
     background-color: rgb(0, 142, 231);
     color: #fff;
+}
+
+.score-container {
+    text-align: center;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: bold;
 }

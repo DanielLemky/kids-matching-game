@@ -19,7 +19,7 @@ function cardClicked() {
 	if (event.target.dataset.side === 'down') {
 		console.log(upCards.length)
 		if (upCards.length >= 2) {
-			statusMessage('Oops. You already have 2 cards up.', 'alert')
+			statusMessage('Oops. You already have 2 cards up. Press clear to continue.', 'alert')
 			return
 		} else if (upCards.length === 1) {
 			upCards.push(
@@ -30,12 +30,18 @@ function cardClicked() {
 			)
 			if (checkForMatch(upCards)) {
 				console.log('match!')
-				statusMessage('Wohoo! Match!', 'match')
+				statusMessage('Match!', 'match')
 				matched.push(upCards[0]['cardNumber'])
 				matched.push(upCards[1]['cardNumber'])
 				document.getElementById('card-' + upCards[0]['cardNumber']).dataset.status = 'matched'
 				document.getElementById('card-' + upCards[1]['cardNumber']).dataset.status = 'matched'
 				upCards = []
+				updateScore()
+				console.log('Score:')
+				console.log(updateScore)
+				if (matchCount() == 9) {
+					statusMessage('Wohoo! You matched all the cards! Way to go!')
+				}
 			} else {
 				console.log('no match')
 				statusMessage('No match', 'no-match')
@@ -120,6 +126,12 @@ function clear() {
 		upCards = []
 	}
 	removeAction('clear')
+	removeMessage()
+}
+
+function removeMessage() {
+	document.getElementById('message').innerHTML = ""
+	document.getElementById('message').className = ""
 }
 
 document.onkeyup = function(e) {
@@ -127,3 +139,14 @@ document.onkeyup = function(e) {
 		clear()
 	}
 }
+
+function matchCount() {
+	return matched.length / 2
+}
+
+function updateScore() {
+	document.getElementById('score').innerText = matchCount()
+}
+
+
+// Ideas: Bebo & Jajo's Memory Game
