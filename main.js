@@ -38,7 +38,7 @@ function cardClicked() {
 				upCards = []
 			} else {
 				console.log('no match')
-				statusMessage('No match.', 'no-match')
+				statusMessage('No match', 'no-match')
 				addAction('clear')
 			}
 		} else {

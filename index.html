@@ -4,7 +4,7 @@
         <link rel="stylesheet" href="main.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&family=Lato&display=swap" rel="stylesheet">
     </head>
 
     <body>
@@ -12,8 +12,12 @@
 
             <h1>Matching Game</h1>
 
-            <div id="message"></div>
-            <div id="action" data-action="" onclick="action()"></div>
+            <div id="status-container">
+                <div id="message"></div>
+                <div class="action-container">
+                    <div id="action" data-action="" onclick="action()"></div>
+                </div>
+            </div>
 
             <div id="game">
 
