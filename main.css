@@ -1,38 +1,47 @@
 body {
-    background-color: #2e7eff;
     max-width: 100%;
+}
+
+main {
+    background-color: #e8e8e8;
+    border: 20px solid #2e7eff;
+    border-radius: 10px;
 }
 
 h1 {
     text-align: center;
-    color: #fff;
+    color: #2e7eff;
+    font-family: 'Gaegu', cursive;
+    font-size: 4rem;
+    margin-top: .25rem;
+    margin-bottom: .5rem;
 }
 
 #game {
-    border: 3px solid #fff;
-    margin: 15px;
+    margin: 5px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    background-color: #e8e8e8;
 }
 
 .card {
     height: 200px;
-    width: 200px;
+    width: 150px;
     margin: 15px;
+    border: 10px solid #fff;
+    border-radius: 10px;
 }
 
 .card.down {
-    background-color: #b5e4fb;
-    border: 15px solid rgb(38, 140, 51);
+    opacity: 0.8;
+    background-image:  linear-gradient(135deg, #444cf7 25%, transparent 25%), linear-gradient(225deg, #444cf7 25%, transparent 25%), linear-gradient(45deg, #444cf7 25%, transparent 25%), linear-gradient(315deg, #444cf7 25%, #e5e5f7 25%);
+    background-position:  10px 0, 10px 0, 0 0, 0 0;
+    background-size: 10px 10px;
+    background-repeat: repeat;
 }
 
 .card.up {
     background-color: #fff;
-    font-size: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 15px solid #fff;
-    border-radius: 3px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;;
 }
