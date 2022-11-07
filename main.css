@@ -5,13 +5,13 @@ body {
 
 main {
     background-color: #e8e8e8;
-    border: 20px solid #2e7eff;
+    border: 20px solid rgb(0, 142, 231);
     border-radius: 10px;
 }
 
 h1 {
     text-align: center;
-    color: #2e7eff;
+    color: rgb(255, 102, 0);
     font-family: 'Gaegu', cursive;
     font-size: 4rem;
     margin-top: .25rem;
@@ -84,7 +84,7 @@ h1 {
 }
 
 .action-container {
-    width: 100px;
+    width: 150px;
 }
 
 #action {
@@ -97,7 +97,7 @@ h1 {
     margin: 5px;
 }
 
-#action.clear {
+#action.clear, #action.new-game {
     background-color: rgb(0, 142, 231);
     color: #fff;
 }
@@ -107,4 +107,7 @@ h1 {
     font-size: 1.3rem;
     text-transform: uppercase;
     font-weight: bold;
+    background-color:rgb(0, 142, 231);
+    color: #fff;
+    padding: 10px;
 }

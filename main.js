@@ -41,6 +41,7 @@ function cardClicked() {
 				console.log(updateScore)
 				if (matchCount() == 9) {
 					statusMessage('Wohoo! You matched all the cards! Way to go!')
+					addAction('new game')
 				}
 			} else {
 				console.log('no match')
@@ -97,6 +98,10 @@ function addAction(action) {
 		document.getElementById('action').textContent = 'Clear'
 		document.getElementById('action').dataset.action = 'clear'
 		document.getElementById('action').classList.add('clear')
+	} else if (action === 'new game') {
+		document.getElementById('action').textContent = 'New Game'
+		document.getElementById('action').dataset.action = 'new game'
+		document.getElementById('action').classList.add('new-game')
 	}
 }
 
@@ -111,6 +116,8 @@ function removeAction(action) {
 function action() {
 	if (event.target.dataset.action === 'clear') {
 		clear()
+	} else if (event.target.dataset.action) {
+		location.reload();
 	}
 }
 
