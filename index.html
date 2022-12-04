@@ -26,8 +26,13 @@
                 </div>
             </div>
 
-            <div id="game">
+            <div id="game-type-selector">
+                <h2>Choose game type</h2>
+                <span class="game-type-option" onclick="chooseGameType('paw-patrol')">Paw Patrol</span>
+                <span class="game-type-option" onclick="chooseGameType('emojis')">Emojis</span>
+            </div>
 
+            <div id="game" class="dealt-deck hidden">
                 <div id="card-0" class="card down" data-card-number="0" data-side="down" data-card-value="" data-status="unmatched" onclick="cardClicked()"></div>
                 <div id="card-1" class="card down" data-card-number="1" data-side="down" data-card-value="" data-status="unmatched" onclick="cardClicked()"></div>
                 <div id="card-3" class="card down" data-card-number="3" data-side="down" data-card-value="" data-status="unmatched" onclick="cardClicked()"></div>
@@ -46,7 +51,6 @@
                 <div id="card-15" class="card down" data-card-number="15" data-side="down" data-card-value="" data-status="unmatched" onclick="cardClicked()"></div>
                 <div id="card-16" class="card down" data-card-number="16" data-side="down" data-card-value="" data-status="unmatched" onclick="cardClicked()"></div>
                 <div id="card-17" class="card down" data-card-number="17" data-side="down" data-card-value="" data-status="unmatched" onclick="cardClicked()"></div>
-
             </div>
 
         </main>

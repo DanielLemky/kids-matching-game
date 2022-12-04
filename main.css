@@ -112,3 +112,23 @@ h1 {
     color: #fff;
     padding: 10px;
 }
+
+.hidden {
+display: none !important;
+}
+
+#game-type-selector {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.game-type-option {
+    cursor: pointer;
+    border: 1px solid rgb(0,142,231);
+    background-color: #fff;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 50px 50px;
+    width: 100px;
+    margin: 0 10px;
+}

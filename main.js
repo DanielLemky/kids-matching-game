@@ -12,8 +12,21 @@ let pawPatrolCards = [
 	'liberty'
 ]
 
+let emojiCards = [
+	'💩',
+	'🐶',
+	'🦊',
+	'🐵',
+	'🐸',
+	'🦁',
+	'🌎',
+	'⭐️',
+	'⛄️'
+]
+
 let upCards = []
 let matched = []
+let deck = null
 
 function cardClicked() {
 	// console.log(upCards)
@@ -70,18 +83,24 @@ function cardClicked() {
 
 function getCardFromCardNumber(cardNumber) {
 	// console.log(cards[cardNumber])
-	event.target.style.backgroundImage = "url('assets/paw-patrol/" + cards[cardNumber] + '.png'
+	if (deck === 'paw-patrol') {
+		event.target.style.backgroundImage = "url('assets/paw-patrol/" + cards[cardNumber] + '.png'
+	} else {
+		event.target.style.backgroundImage = 'none'
+		event.target.innerHTML = "<div style='font-size:100px; display: flex; justify-content: center; align-items: center; height: 100%'>" + cards[cardNumber] + "</div>"
+	}
 }
 
-function dealCards() {
-	cards = pawPatrolCards
-	cards = cards.concat(pawPatrolCards)
+function dealCards(deck) {
+	cards = deck
+	cards = cards.concat(deck)
 	cards = cards.sort(() => Math.random() - 0.5);
 	for (i = 0; i < cards.length; i++) {
 		document.getElementById('card-' + i).dataset.cardValue = cards[i]
 	}
+	document.getElementById('game').classList.remove('hidden')
+	document.getElementById('game-type-selector').classList.add('hidden')
 }
-dealCards()
 
 function statusMessage(message, type) {
 	document.getElementById('message').textContent = message
@@ -128,6 +147,7 @@ function clear() {
 			cardElements[i].classList.add('down')
 			cardElements[i].dataset.side = 'down'
 			cardElements[i].style.backgroundImage = "linear-gradient(135deg, #444cf7 25%, transparent 25%), linear-gradient(225deg, #444cf7 25%, transparent 25%), linear-gradient(45deg, #444cf7 25%, transparent 25%), linear-gradient(315deg, #444cf7 25%, #e5e5f7 25%)"
+			cardElements[i].innerHTML = ""
 		}
 		upCards = []
 	}
@@ -154,5 +174,14 @@ function updateScore() {
 	document.getElementById('score').innerText = matchCount()
 }
 
+function chooseGameType(type) {
+	if (type == 'paw-patrol') {
+		dealCards(pawPatrolCards)
+		deck = 'paw-patrol'
+	} else {
+		dealCards(emojiCards)
+		deck = 'emojis'
+	}
+}
 
 // Ideas: Bebo & Jajo's Memory Game
